@@ -1,0 +1,16 @@
+@startuml
+class LeaderboardController {
+    +getLeaderboard()
+}
+
+class EvaluationReportServiceImpl {
+    +generateLeaderboard()
+}
+
+class EvaluationResultRepository {
+    +findAll()
+}
+
+LeaderboardController --> EvaluationReportServiceImpl
+EvaluationReportServiceImpl --> EvaluationResultRepository
+@enduml

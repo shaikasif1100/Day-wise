@@ -1,0 +1,14 @@
+@startuml
+start
+:User uploads assignment file (.txt);
+:Validate file format;
+if (File is valid?) then (Yes)
+    :Parse file contents;
+    :Extract student details;
+    :Save details in DynamoDB;
+    :Return success response;
+else (No)
+    :Return error message;
+endif
+stop
+@enduml

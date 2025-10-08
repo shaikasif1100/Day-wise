@@ -1,0 +1,16 @@
+@startuml
+rectangle Controller {
+  (EvaluationController)
+}
+
+rectangle Service {
+  (EvaluationServiceImpl)
+}
+
+rectangle Repository {
+  (EvaluationResultRepository)
+}
+
+(EvaluationController) --> (EvaluationServiceImpl)
+(EvaluationServiceImpl) --> (EvaluationResultRepository)
+@enduml

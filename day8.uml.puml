@@ -1,0 +1,14 @@
+@startuml
+actor Student
+participant "AutoEval API" as API
+participant "EvaluationEngine" as Engine
+participant "JUnit Runner" as Runner
+participant "DynamoDB"
+
+Student -> API : Upload Java file
+API -> Engine : Trigger evaluation()
+Engine -> Runner : Run test cases
+Runner -> DynamoDB : Store test logs & results
+DynamoDB --> API : Return evaluation status
+API --> Student : Display PASS/FAIL result
+@enduml

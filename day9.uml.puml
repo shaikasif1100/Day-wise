@@ -1,0 +1,23 @@
+@startuml
+class EvaluationReportController {
+    +getLeaderboard()
+    +getReportByStudentId(studentId)
+    +getReportByAssignmentId(assignmentId)
+}
+
+class EvaluationReportServiceImpl {
+    +getLeaderboard()
+    +getReportByStudentId()
+    +getReportByAssignmentId()
+    +getAllReports()
+}
+
+class EvaluationResultRepository {
+    +findByStudentId()
+    +findByAssignmentId()
+    +findAll()
+}
+
+EvaluationReportController --> EvaluationReportServiceImpl
+EvaluationReportServiceImpl --> EvaluationResultRepository
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+actor Student
+participant "EvaluationController" as EC
+participant "EvaluationServiceImpl" as ES
+participant "EvaluationEngineImpl" as EE
+database "DynamoDB" as DB
+
+Student -> EC : Upload submission
+EC -> ES : Validate and process submission
+ES -> EE : Run evaluation
+EE -> DB : Store results in EvaluationResult
+ES -> DB : Log success or failure in EvaluationLog / EvaluationErrorLogs
+EC -> Student : Return evaluation result
+@enduml
