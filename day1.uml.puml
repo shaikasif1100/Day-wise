@@ -1,0 +1,11 @@
+@startuml
+actor Student
+actor Admin
+
+rectangle "E-Learning Platform" {
+    Student --> (Upload Assignment File)
+    Admin --> (View Student Results)
+    Admin --> (Update/Delete Student Data)
+    (Upload Assignment File) --> (Parse & Store Data in DynamoDB)
+}
+@enduml

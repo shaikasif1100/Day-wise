@@ -1,0 +1,13 @@
+@startuml
+start
+:User uploads file or makes API call;
+if (Is data valid?) then (Yes)
+  :Process data;
+  :Store in DynamoDB;
+  :Return success response;
+else (No)
+  :Trigger error handler;
+  :Return error response;
+endif
+stop
+@enduml

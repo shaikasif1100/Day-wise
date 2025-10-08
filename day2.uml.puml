@@ -1,0 +1,15 @@
+@startuml
+actor Student
+actor Admin
+
+rectangle "Auto Evaluation Platform" {
+    Student --> (Upload Java File)
+    (Upload Java File) --> (Evaluation Engine)
+    (Evaluation Engine) --> (Java Compiler Service)
+    (Evaluation Engine) --> (JUnit Test Runner)
+    (Evaluation Engine) --> (EvaluationResult Repository)
+    (Evaluation Engine) --> (EvaluationLog Repository)
+    Admin --> (View Leaderboard)
+    Admin --> (View Reports)
+}
+@enduml
